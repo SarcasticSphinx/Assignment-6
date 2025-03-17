@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Learning Platform</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed-nav border-b-2 border-gray-200 hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex justify-between items-center py-4">
+          <div class="logo">
+            <a href="#hero-page"
+              ><h1 class="text-xl font-bold flex items-center">
+                English<img src="./assets/logo.png" alt="" /><span
+                  class="text-blue-500 bangla-text"
+                  >জানালা</span
+                >
+              </h1></a
+            >
+          </div>
+          <div class="flex gap-4">
+            <a href="#faq" class="nav-btn">
+              <i class="fa-solid fa-circle-question"></i>FAQ
+            </a>
+            <a href="#lesson-selection" class="nav-btn">
+              <i class="fa-solid fa-book-open"></i>Learn
+            </a>
+            <button class="nav-btn" onclick="Logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 max-w-6xl pt-20">
+      <!-- Hero Section -->
+      <div id="hero-page" class="flex items-center justify-between py-12">
+        <div class="w-1/2">
+          <h2 class="text-4xl font-bold mb-4">
+            <span class="text-blue-400">English</span> Is Easy!!
+          </h2>
+          <p class="text-xl text-gray-600 mb-6 bangla-text">
+            আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+            আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+            অন্য একটি Level এ
+          </p>
+          <form>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Your Name"
+              class="input-field"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Your password"
+              class="input-field"
+            />
+            <button type="submit" class="primary-btn">Get Started</button>
+          </form>
+        </div>
+        <div class="w-1/2 flex justify-center">
+          <div class="hero-image-container">
+            <img
+              src="./assets/hero-student.png"
+              alt="Teacher"
+              class="rounded-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Vocabulary Section -->
+      <div id="lesson-selection" class="text-center py-12 hidden">
+        <h3 class="text-4xl font-semibold mb-8">
+          <span class="text-blue-400">Let's</span> Learn Vocabularies
+        </h3>
+        <div class="lesson-container flex justify-center gap-4 flex-wrap"></div>
+      </div>
+
+      <!-- Lesson Section -->
+      <div
+        id="lesson"
+        class="text-center py-8 px-8 bg-gray-100 rounded-2xl hidden"
+      ></div>
+
+      <!-- FAQ Section -->
+      <div id="faq" class="py-12 hidden">
+        <h3 class="text-4xl font-semibold mb-8 text-center">
+          <span class="text-blue-400">Frequently</span>Asked Questions
+        </h3>
+        <div class="space-y-4">
+          <div class="faq-item">
+            <h4 class="flex justify-between">
+              1. What is the difference between var, let, and const?<span
+                class="plus"
+                >+</span
+              >
+            </h4>
+            <div class="faq-answer hidden">
+              <p>
+                <code>var</code> is function-scoped and can be redeclared and
+                updated. <code>let</code> is block-scoped and can be updated but
+                not redeclared. <code>const</code> is block-scoped and cannot be
+                updated or redeclared.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h4 class="flex justify-between">
+              2. What is the difference between map(), forEach(), and
+              filter()?<span class="plus">+</span>
+            </h4>
+            <div class="faq-answer hidden">
+              <p>
+                <code>map()</code> creates a new array with the results of
+                calling a function on every element.
+                <code>forEach()</code> executes a function on each element but
+                does not return a new array. <code>filter()</code> creates a new
+                array with elements that pass a test.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h4 class="flex justify-between">
+              3. What are arrow functions and how are they different from
+              regular functions?<span class="plus">+</span>
+            </h4>
+            <div class="faq-answer hidden">
+              <p>
+                Arrow functions are a shorter syntax for writing functions. They
+                do not have their own <code>this</code> context and cannot be
+                used as constructors.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h4 class="flex justify-between">
+              4. How do JavaScript Promises work?<span class="plus">+</span>
+            </h4>
+            <div class="faq-answer hidden">
+              <p>
+                Promises represent the eventual completion (or failure) of an
+                asynchronous operation and its resulting value. They have three
+                states: pending, fulfilled, and rejected.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h4 class="flex justify-between">
+              5. How do closures work in JavaScript?<span class="plus">+</span>
+            </h4>
+            <div class="faq-answer hidden">
+              <p>
+                Closures are functions that have access to variables from
+                another function’s scope. This is achieved by creating a
+                function inside another function and exposing it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="py-8 border-t">
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-xl font-bold mb-2 flex items-center">
+              English<img src="./assets/logo.png" alt="" /><span
+                class="text-blue-500"
+                >Pro</span
+              >
+            </h1>
+            <p class="text-sm text-gray-600">Copyright © 2024 EnglishPro.com</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="#" class="text-gray-600 hover:text-blue-500">
+              <img src="./assets/youtube-thumb.png" alt="" />
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-500">
+              <img src="./assets/instagram-thumb.png" alt="" />
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-500">
+              <img src="./assets/fb-thumb.png" alt="" />
+            </a>
+            <a href="#" class="text-gray-600 hover:text-blue-500">
+              <img src="./assets/github-thumb.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/daf58b19bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
